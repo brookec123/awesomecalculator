@@ -1,0 +1,26 @@
+[project]
+name = "brookec-awesomecalculator"
+version = "1.0.0"
+description = "Calc stuff"
+readme = "README.md"
+authors = [{ name = "Brooke Cronin", email = "bcronin4177@conestogac.on.ca" }]
+license = { file = "LICENSE" }
+classifiers = [
+"License :: OSI Approved :: MIT License",
+"Programming Language :: Python",
+"Programming Language :: Python :: 3",
+]
+keywords = ["feed", "reader", "tutorial"]
+dependencies = [
+'tomli; python_version < "3.12"'
+]
+requires-python = ">=3.12"
+
+[project.optional-dependencies]
+dev = ["black", "bumpver", "isort", "pip-tools", "pytest"]
+
+[project.urls]
+Homepage = "https://github.com/brookec123/awesomecalculator.git"
+
+[project.scripts]
+realpython = "reader.__main__:main"

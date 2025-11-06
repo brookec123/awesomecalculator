@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+src/__init__.py
+src/setup.py
+src/brookec_awesomecalculator.egg-info/PKG-INFO
+src/brookec_awesomecalculator.egg-info/SOURCES.txt
+src/brookec_awesomecalculator.egg-info/dependency_links.txt
+src/brookec_awesomecalculator.egg-info/entry_points.txt
+src/brookec_awesomecalculator.egg-info/requires.txt
+src/brookec_awesomecalculator.egg-info/top_level.txt
+src/calculator/__init__.py
+src/calculator/core.py
+src/tests/__init__.py
+src/tests/testscalculatortests.py
