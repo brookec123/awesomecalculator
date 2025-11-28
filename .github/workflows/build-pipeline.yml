@@ -49,4 +49,23 @@ jobs:
         name: awesome-calculator
         path: src/dist    
 
-
+  install-and-verify:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Set up python 3.12
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.12
+    - name: Download package artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: awesome-calculator
+        path: dist/
+    - name: Install wheel package
+      run: |
+        pip install dist/*.whl
+    - name: Verify installation
+      run: |
+        python -c "import awesomecalculator; print('Package imported successfully!')"
+        python -c "from awesomecalculator.calculator import add, subtract, multiply, divide; print(f'Functions test: 10 + 5 = {add(10, 5)}, 10 - 5 = {subtract(10, 5)}, 10 * 5 = {multiply(10, 5)}, 10 / 5 = {divide(10, 5)}')"
