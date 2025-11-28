@@ -64,8 +64,8 @@ jobs:
         path: dist/
     - name: Install wheel package
       run: |
-        pip install dist/*.whl
+        pip install -i https://test.pypi.org/simple/ brookec-awesomecalculator
     - name: Verify installation
       run: |
-        python -c "import awesomecalculator; print('Package imported successfully!')"
-        python -c "from awesomecalculator.calculator import add, subtract, multiply, divide; print(f'Functions test: 10 + 5 = {add(10, 5)}, 10 - 5 = {subtract(10, 5)}, 10 * 5 = {multiply(10, 5)}, 10 / 5 = {divide(10, 5)}')"
+        python -c "from calculator.core import Calculator; print('Package imported successfully!')"
+        python -c "calc = Calculator(); print(f'Functions test: 10 + 5 = {calc.Add(10, 5)}, 10 - 5 = {calc.Substract(10, 5)}, 10 * 5 = {calc.Multiply(10, 5)}, 10 / 5 = {calc.Divide(10, 5)}')"
